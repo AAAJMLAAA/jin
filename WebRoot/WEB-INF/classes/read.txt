@@ -1,0 +1,27 @@
+犯了致命的错误，
+在servlet中调用那个方法必须要在放在那个post或get下面，
+或者在post下面调用get方法
+
+如果不调就会运行到，一般采用service()的方法
+
+// 创建验证器
+		Authenticator auth = new Authenticator() {
+			public PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("Ruian****", "199604****");
+				//Ruian****为发送邮件的邮箱名
+				//199604****为客户端授权码（注意）
+			}
+		};
+
+
+发送给邮件：
+		1.配置属性信息，property 
+		2.创建session实例
+		3.创建通道transport
+		4.建立服务器连接
+		5.获取发送的Message
+			5.1.创建MimeMessage对象
+			5.2.创建发送者，创建接收者
+			5.3.设置发送方式和接受方式
+			5.4.设置主题和内容
+		6.发送信息
